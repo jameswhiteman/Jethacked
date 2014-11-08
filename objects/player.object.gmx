@@ -109,47 +109,33 @@ if gamepad
 if left
 {
     face = -1
-    if onGround &amp;&amp; phy_linear_velocity_x &gt; maxMoveSpeed * -1
-        physics_apply_force(phy_com_x, phy_com_y, -moveForce, 0)
-    else if !onGround &amp;&amp; phy_linear_velocity_x &gt; maxFlySpeed * -1
+    if onGround
+        physics_apply_impulse(phy_com_x, phy_com_y, -moveImpulse, 0)
+    else if juice &gt; 0
     {
-        physics_apply_force(phy_com_x, phy_com_y, -flyForce, 0)
-        if onGround
-            physics_apply_impulse(phy_com_x, phy_com_y, -moveImpulse, 0)
-        else if juice &gt; 0
-        {
-            physics_apply_force(phy_com_x, phy_com_y, -moveForce, 0)
-            part_emitter_burst(partSys,emitter1,particle1,10);
-            juice--
-        }
+        physics_apply_force(phy_com_x, phy_com_y, -moveForce, 0)
+        part_emitter_burst(partSys,emitter1,particle1,10);
+        juice--
     }
 }
 else if right
 {
     face = 1
-     if onGround &amp;&amp; phy_linear_velocity_x &lt; maxMoveSpeed
+    if onGround
+        physics_apply_impulse(phy_com_x, phy_com_y, moveImpulse, 0)
+    else if juice &gt; 0
+    {
         physics_apply_force(phy_com_x, phy_com_y, moveForce, 0)
-     else if !onGround &amp;&amp; phy_linear_velocity_x &lt; maxFlySpeed
-     {
-        physics_apply_force(phy_com_x, phy_com_y, flyForce, 0)
-        if onGround
-            physics_apply_impulse(phy_com_x, phy_com_y, moveImpulse, 0)
-        else if juice &gt; 0
-        {
-            physics_apply_force(phy_com_x, phy_com_y, moveForce, 0)
-            part_emitter_burst(partSys,emitter1,particle1,10);
-            juice--
-        }
-     }
+        part_emitter_burst(partSys,emitter1,particle1,10);
+        juice--
+    }
 }
 if jump
 {
-    if onGround &amp;&amp; phy_linear_velocity_y &gt; maxFlySpeed * -1
+    if onGround
        physics_apply_force(phy_com_x, phy_com_y, 0, -jumpForce)
     else if juice &gt; 0
     {
-        if phy_linear_velocity_y &gt; maxFlySpeed * -1
-            physics_apply_force(phy_com_x, phy_com_y, 0, -flyForce)
         physics_apply_force(phy_com_x, phy_com_y, 0, -jumpForce)
         part_emitter_burst(partSys,emitter1,particle1,10);
         juice-=2
@@ -157,7 +143,7 @@ if jump
 }
 if dash
 {
-    physics_apply_force(phy_com_x, phy_com_y, phy_linear_velocity_x * dashForce, phy_linear_velocity_y * dashForce);
+    //physics_apply_force(phy_com_x, phy_com_y, phy_linear_velocity_x * dashForce, phy_linear_velocity_y * dashForce);
 }
 if shoot
 {
