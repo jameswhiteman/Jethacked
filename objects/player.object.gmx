@@ -31,7 +31,6 @@ jumpForce = 1600
 jumpImpulse = 100
 maxAirSpeed = 50
 maxGroundSpeed = 25
-face = 1
 juiceMax = 800
 juice = juiceMax
 gamepad = true
@@ -108,7 +107,7 @@ if gamepad
 }
 if left
 {
-    face = -1
+    image_xscale = -1
     if onGround
        physics_apply_impulse(phy_com_x, phy_com_y, -moveImpulse, 0)
     else if juice &gt; 0
@@ -120,7 +119,7 @@ if left
 }
 else if right
 {
-    face = 1
+    image_xscale = 1
     if onGround
         physics_apply_impulse(phy_com_x, phy_com_y, moveImpulse, 0)
      else if juice &gt; 0
@@ -148,11 +147,15 @@ if dash
 }
 if shoot
 {
-    instance_create(x, y, blast);
+    var i;
+    i = instance_create(x, y, blast);
+    i.parent = id
 }
 if parry
 {
-    instance_create(x, y, reflect);
+    var i;
+    i = instance_create(x, y, reflect);
+    i.parent = id
 }
 
 if onGround
@@ -168,7 +171,6 @@ else
 }
 
 juice = max(0, juice)
-image_xscale = face
 </string>
           </argument>
         </arguments>
@@ -215,7 +217,10 @@ image_xscale = face
           <argument>
             <kind>1</kind>
             <string>draw_text(0, 0, string(juice))
-draw_healthbar(x - 11 * image_xscale, y - 10, x - 9 * image_xscale, y, juice/juiceMax*100, c_black, c_red, c_green, 3, false, false) 
+if image_xscale &gt; 0
+   draw_healthbar(x - 11, y - 10, x - 9, y, juice/juiceMax*100, c_black, c_red, c_green, 3, false, false)
+else
+    draw_healthbar(x + 9, y - 10, x + 11, y, juice/juiceMax*100, c_black, c_red, c_green, 3, false, false) 
 draw_self()
 </string>
           </argument>
