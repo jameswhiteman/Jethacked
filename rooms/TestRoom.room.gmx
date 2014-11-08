@@ -53,7 +53,7 @@
   <instances>
     <instance objName="player" x="256" y="64" name="inst_559C0EC5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="block" x="288" y="256" name="inst_150EB9BF" locked="0" code="" scaleX="10" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="control" x="0" y="0" name="inst_02D40688" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="control" x="0" y="0" name="inst_02D40688" locked="0" code="// David Buff is stupid&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>
