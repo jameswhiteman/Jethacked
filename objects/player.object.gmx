@@ -25,17 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>moveForce = 500
-jumpForce = 700
-flyForce = 600
-dashForce = 2
-
-maxMoveSpeed = 100
-maxFlySpeed = 200
+            <string>moveForce = 800
+moveImpulse = 20
+jumpForce = 1600
+jumpImpulse = 100
+maxAirSpeed = 50
+maxGroundSpeed = 25
 juiceMax = 800
 juice = juiceMax
 gamepad = true
 joystickTolerance = 0.1
+onGround = false
 
 phy_fixed_rotation = true
 
@@ -82,20 +82,17 @@ emitter1 = part_emitter_create(partSys);
             <string>left = keyboard_check(vk_left) || keyboard_check(ord('A'))
 right = keyboard_check(vk_right) || keyboard_check(ord('D'))
 jump = keyboard_check(vk_up) || keyboard_check(ord('W')) || keyboard_check(vk_space) || joystick_check_button(0, 3)
-dash = keyboard_check_pressed(ord('K'))
-onGround = place_meeting(x, y + 1, block)
+onGround = place_meeting(x, y + 1, par_block)
 
-part_emitter_region(partSys,emitter1,x - 10 * image_xscale + 6,x - 10 * image_xscale + -6,y + 5 + 4,y + 5 + -4,ps_shape_ellipse,1);
-
+part_emitter_region(partSys,emitter1,x - 10 * image_xscale + 6,x - 10 * image_xscale + -6,y + 5 + 4, y + 5 + -4,ps_shape_ellipse,1);
 if gamepad
 {
-    if onGround
-       physics_apply_impulse(phy_com_x, phy_com_y, joystick_xpos(0) * moveForce, 0)
-    else if juice &gt; 0
+    if abs(joystick_xpos(0)) &gt; joystickTolerance
     {
-        physics_apply_force(phy_com_x, phy_com_y, joystick_xpos(0) * flyForce, 0)
-        juice-=2
-        if abs(joystick_xpos(0)) &gt; joystickTolerance
+        image_xscale = sign(joystick_xpos(0))
+        if onGround
+           physics_apply_impulse(phy_com_x, phy_com_y, joystick_xpos(0) * moveImpulse, 0)
+        else if juice &gt; 0
         {
             physics_apply_force(phy_com_x, phy_com_y, joystick_xpos(0) * moveForce, 0)
             part_emitter_burst(partSys,emitter1,particle1,10);
@@ -107,7 +104,7 @@ if left
 {
     image_xscale = -1
     if onGround
-        physics_apply_impulse(phy_com_x, phy_com_y, -moveImpulse, 0)
+       physics_apply_impulse(phy_com_x, phy_com_y, -moveImpulse, 0)
     else if juice &gt; 0
     {
         physics_apply_force(phy_com_x, phy_com_y, -moveForce, 0)
@@ -117,11 +114,10 @@ if left
 }
 else if right
 {
-
     image_xscale = 1
-    if onGround
+     if onGround
         physics_apply_impulse(phy_com_x, phy_com_y, moveImpulse, 0)
-    else if juice &gt; 0
+     else if juice &gt; 0
     {
         physics_apply_force(phy_com_x, phy_com_y, moveForce, 0)
         part_emitter_burst(partSys,emitter1,particle1,10);
@@ -131,7 +127,7 @@ else if right
 if jump
 {
     if onGround
-       physics_apply_force(phy_com_x, phy_com_y, 0, -jumpForce)
+       physics_apply_impulse(phy_com_x, phy_com_y, 0, -jumpImpulse)
     else if juice &gt; 0
     {
         physics_apply_force(phy_com_x, phy_com_y, 0, -jumpForce)
@@ -139,23 +135,27 @@ if jump
         juice-=2
     }
 }
-if dash
-{
-    //physics_apply_force(phy_com_x, phy_com_y, phy_linear_velocity_x * dashForce, phy_linear_velocity_y * dashForce);
-}
 
 if onGround
 {
-    juice = min(juiceMax, juice + 10)
+    juice = min(juiceMax, juice + 2)
+    phy_speed_x = min(maxGroundSpeed, phy_speed_x)
+    phy_speed_y = min(maxGroundSpeed, phy_speed_y)
+}
+else
+{
+    phy_speed_x = min(maxAirSpeed, phy_speed_x)
+    phy_speed_y = min(maxAirSpeed, phy_speed_y)
 }
 
 juice = max(0, juice)
+
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="block">
+    <event eventtype="4" ename="par_block">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -196,6 +196,7 @@ juice = max(0, juice)
           <argument>
             <kind>1</kind>
             <string>draw_text(0, 0, string(juice))
+draw_healthbar(x - 11 * image_xscale, y - 10, x - 9 * image_xscale, y, juice/juiceMax*100, c_black, c_red, c_green, 3, false, false) 
 draw_self()
 </string>
           </argument>
@@ -206,14 +207,14 @@ draw_self()
   <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>1</PhysicsObjectShape>
-  <PhysicsObjectDensity>1</PhysicsObjectDensity>
+  <PhysicsObjectDensity>1.5</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
   <PhysicsObjectLinearDamping>0.5</PhysicsObjectLinearDamping>
   <PhysicsObjectAngularDamping>0.200000002980232</PhysicsObjectAngularDamping>
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
-  <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
+  <PhysicsObjectKinematic>-1</PhysicsObjectKinematic>
   <PhysicsShapePoints>
     <point>0,0</point>
     <point>32,0</point>

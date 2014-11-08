@@ -20,6 +20,7 @@
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\player</object>
+    <object>objects\par_block</object>
     <object>objects\control</object>
     <object>objects\block</object>
     <object>objects\plane_1</object>
