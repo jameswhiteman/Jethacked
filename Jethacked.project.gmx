@@ -15,6 +15,8 @@
     <sprite>sprites\spr_player_hurt</sprite>
     <sprite>sprites\spr_player_run</sprite>
     <sprite>sprites\sprite7</sprite>
+    <sprite>sprites\spr_blast</sprite>
+    <sprite>sprites\spr_reflect</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -25,6 +27,8 @@
     <object>objects\plane_1</object>
     <object>objects\plane_2</object>
     <object>objects\player_tmp</object>
+    <object>objects\blast</object>
+    <object>objects\reflect</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\TestRoom</room>

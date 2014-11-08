@@ -30,6 +30,7 @@ jumpForce = 700
 flyForce = 600
 dashForce = 2
 
+face = 1
 maxMoveSpeed = 100
 maxFlySpeed = 200
 juiceMax = 800
@@ -83,6 +84,8 @@ emitter1 = part_emitter_create(partSys);
 right = keyboard_check(vk_right) || keyboard_check(ord('D'))
 jump = keyboard_check(vk_up) || keyboard_check(ord('W')) || keyboard_check(vk_space) || joystick_check_button(0, 3)
 dash = keyboard_check_pressed(ord('K'))
+shoot = keyboard_check_pressed(ord('J'))
+parry = keyboard_check_pressed(ord('L'))
 onGround = place_meeting(x, y + 1, block)
 
 part_emitter_region(partSys,emitter1,x - 10 * image_xscale + 6,x - 10 * image_xscale + -6,y + 5 + 4,y + 5 + -4,ps_shape_ellipse,1);
@@ -105,12 +108,12 @@ if gamepad
 }
 if left
 {
+    face = -1
     if onGround &amp;&amp; phy_linear_velocity_x &gt; maxMoveSpeed * -1
         physics_apply_force(phy_com_x, phy_com_y, -moveForce, 0)
     else if !onGround &amp;&amp; phy_linear_velocity_x &gt; maxFlySpeed * -1
     {
         physics_apply_force(phy_com_x, phy_com_y, -flyForce, 0)
-        image_xscale = -1
         if onGround
             physics_apply_impulse(phy_com_x, phy_com_y, -moveImpulse, 0)
         else if juice &gt; 0
@@ -121,14 +124,14 @@ if left
         }
     }
 }
-else if right &amp;&amp; phy_linear_velocity_x &lt; maxMoveSpeed
+else if right
 {
+    face = 1
      if onGround &amp;&amp; phy_linear_velocity_x &lt; maxMoveSpeed
         physics_apply_force(phy_com_x, phy_com_y, moveForce, 0)
      else if !onGround &amp;&amp; phy_linear_velocity_x &lt; maxFlySpeed
      {
         physics_apply_force(phy_com_x, phy_com_y, flyForce, 0)
-        image_xscale = 1
         if onGround
             physics_apply_impulse(phy_com_x, phy_com_y, moveImpulse, 0)
         else if juice &gt; 0
@@ -156,6 +159,14 @@ if dash
 {
     physics_apply_force(phy_com_x, phy_com_y, phy_linear_velocity_x * dashForce, phy_linear_velocity_y * dashForce);
 }
+if shoot
+{
+    instance_create(x, y, blast);
+}
+if parry
+{
+    instance_create(x, y, reflect);
+}
 
 if onGround
 {
@@ -163,6 +174,7 @@ if onGround
 }
 
 juice = max(0, juice)
+image_xscale = face
 </string>
           </argument>
         </arguments>
