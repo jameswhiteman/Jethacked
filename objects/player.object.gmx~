@@ -93,14 +93,17 @@ if gamepad
        physics_apply_impulse(phy_com_x, phy_com_y, joystick_xpos(0) * moveForce, 0)
     else if juice &gt; 0
     {
+<<<<<<< HEAD
         physics_apply_force(phy_com_x, phy_com_y, joystick_xpos(0) * flyForce, 0)
         juice-=2
+=======
         if abs(joystick_xpos(0)) &gt; joystickTolerance
         {
             physics_apply_force(phy_com_x, phy_com_y, joystick_xpos(0) * moveForce, 0)
             part_emitter_burst(partSys,emitter1,particle1,10);
             juice-=2
         }
+>>>>>>> 99762337a21a4defa7f28a9f7ad25404ebb1af7f
     }
 }
 if left
@@ -110,15 +113,14 @@ if left
     else if !onGround &amp;&amp; phy_linear_velocity_x &gt; maxFlySpeed * -1
     {
         physics_apply_force(phy_com_x, phy_com_y, -flyForce, 0)
-        image_xscale = -1
-        if onGround
-            physics_apply_impulse(phy_com_x, phy_com_y, -moveImpulse, 0)
-        else if juice &gt; 0
-        {
-            physics_apply_force(phy_com_x, phy_com_y, -moveForce, 0)
-            part_emitter_burst(partSys,emitter1,particle1,10);
-            juice--
-        }
+    image_xscale = -1
+    if onGround
+       physics_apply_impulse(phy_com_x, phy_com_y, -moveImpulse, 0)
+    else if juice &gt; 0
+    {
+        physics_apply_force(phy_com_x, phy_com_y, -moveForce, 0)
+        part_emitter_burst(partSys,emitter1,particle1,10);
+        juice--
     }
 }
 else if right &amp;&amp; phy_linear_velocity_x &lt; maxMoveSpeed
@@ -128,15 +130,14 @@ else if right &amp;&amp; phy_linear_velocity_x &lt; maxMoveSpeed
      else if !onGround &amp;&amp; phy_linear_velocity_x &lt; maxFlySpeed
      {
         physics_apply_force(phy_com_x, phy_com_y, flyForce, 0)
-        image_xscale = 1
-        if onGround
-            physics_apply_impulse(phy_com_x, phy_com_y, moveImpulse, 0)
-        else if juice &gt; 0
-        {
-            physics_apply_force(phy_com_x, phy_com_y, moveForce, 0)
-            part_emitter_burst(partSys,emitter1,particle1,10);
-            juice--
-        }
+    image_xscale = 1
+     if onGround
+        physics_apply_impulse(phy_com_x, phy_com_y, moveImpulse, 0)
+     else if juice &gt; 0
+    {
+        physics_apply_force(phy_com_x, phy_com_y, moveForce, 0)
+        part_emitter_burst(partSys,emitter1,particle1,10);
+        juice--
      }
 }
 if jump
