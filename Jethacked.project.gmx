@@ -17,8 +17,13 @@
     <sprite>sprites\sprite7</sprite>
     <sprite>sprites\spr_blast</sprite>
     <sprite>sprites\spr_reflect</sprite>
+    <sprite>sprites\spr_asteroid</sprite>
+    <sprite>sprites\spr_explosion_1</sprite>
+    <sprite>sprites\spr_explosion_2</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bkg_gradient</background>
+  </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\player</object>
@@ -26,11 +31,14 @@
     <object>objects\control</object>
     <object>objects\block</object>
     <object>objects\plane_1</object>
-    <object>objects\plane_2</object>
     <object>objects\player_tmp</object>
     <object>objects\blast</object>
     <object>objects\reflect</object>
+    <object>objects\plane_creator</object>
+    <object>objects\asteroid</object>
+    <object>objects\explosion</object>
   </objects>
+  <timelines name="timelines"/>
   <rooms name="rooms">
     <room>rooms\TestRoom</room>
     <room>rooms\room0</room>

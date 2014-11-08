@@ -29,9 +29,9 @@
 moveImpulse = 20
 jumpForce = 1600
 jumpImpulse = 100
-maxAirSpeed = 50
-maxGroundSpeed = 25
-juiceMax = 800
+maxAirSpeed = 15
+maxGroundSpeed = 10
+juiceMax = 500
 juice = juiceMax
 gamepad = true
 joystickTolerance = 0.1
@@ -150,6 +150,7 @@ if shoot
     var i;
     i = instance_create(x, y, blast);
     i.parent = id
+    i.image_xscale = image_xscale
 }
 if parry
 {
@@ -160,14 +161,18 @@ if parry
 
 if onGround
 {
-    juice = min(juiceMax, juice + 2)
-    phy_speed_x = min(maxGroundSpeed, phy_speed_x)
-    phy_speed_y = min(maxGroundSpeed, phy_speed_y)
+    juice = min(juiceMax, juice + 4)
+    if phy_speed_x &gt; maxGroundSpeed
+       phy_speed_x = maxGroundSpeed
+    else if phy_speed_x &lt; -maxGroundSpeed
+         phy_speed_x = -maxGroundSpeed
 }
 else
 {
-    phy_speed_x = min(maxAirSpeed, phy_speed_x)
-    phy_speed_y = min(maxAirSpeed, phy_speed_y)
+    if phy_speed_x &gt; maxAirSpeed
+       phy_speed_x = maxAirSpeed
+    else if phy_speed_x &lt; -maxAirSpeed
+         phy_speed_x = -maxAirSpeed
 }
 
 juice = max(0, juice)
@@ -234,7 +239,7 @@ draw_self()
   <PhysicsObjectDensity>1.5</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
-  <PhysicsObjectLinearDamping>0.5</PhysicsObjectLinearDamping>
+  <PhysicsObjectLinearDamping>0.100000001490116</PhysicsObjectLinearDamping>
   <PhysicsObjectAngularDamping>0.200000002980232</PhysicsObjectAngularDamping>
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
