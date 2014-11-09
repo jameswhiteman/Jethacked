@@ -20,6 +20,8 @@
     <sprite>sprites\spr_asteroid</sprite>
     <sprite>sprites\spr_explosion_1</sprite>
     <sprite>sprites\spr_explosion_2</sprite>
+    <sprite>sprites\spr_light_1</sprite>
+    <sprite>sprites\spr_light_2</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_gradient</background>
@@ -28,6 +30,26 @@
   <scripts name="scripts">
     <script>scripts\screen_shake.gml</script>
     <script>scripts\screen_shake_start.gml</script>
+    <script>scripts\lsys_init.gml</script>
+    <script>scripts\lsys_light_add.gml</script>
+    <script>scripts\lsys_light_set_position.gml</script>
+    <script>scripts\lsys_light_set_radius.gml</script>
+    <script>scripts\lsys_light_set_rotation.gml</script>
+    <script>scripts\lsys_light_set_color.gml</script>
+    <script>scripts\lsys_light_set_sprite.gml</script>
+    <script>scripts\lsys_light_delete.gml</script>
+    <script>scripts\lsys_caster_add.gml</script>
+    <script>scripts\lsys_caster_add_point.gml</script>
+    <script>scripts\lsys_caster_set_position.gml</script>
+    <script>scripts\lsys_caster_set_point.gml</script>
+    <script>scripts\lsys_caster_rotate.gml</script>
+    <script>scripts\lsys_caster_check_inside.gml</script>
+    <script>scripts\lsys_caster_delete.gml</script>
+    <script>scripts\lsys_update.gml</script>
+    <script>scripts\lsys_draw.gml</script>
+    <script>scripts\lsys_free.gml</script>
+    <script>scripts\surface_blur.gml</script>
+    <script>scripts\vram_usage.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\player</object>
