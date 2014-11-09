@@ -83,6 +83,7 @@
     <instance objName="block" x="16" y="720" name="inst_1A4CE467" locked="0" code="" scaleX="1.4375" scaleY="43.0322570800781" colour="4294967295" rotation="0"/>
     <instance objName="block" x="1024" y="16" name="inst_A5C5994A" locked="0" code="" scaleX="64.25" scaleY="1.5" colour="4294967295" rotation="0"/>
     <instance objName="block" x="2032" y="720" name="inst_FB9C0225" locked="0" code="" scaleX="1.28999996185303" scaleY="44.1290321350098" colour="4294967295" rotation="0"/>
+    <instance objName="enemy_2" x="320" y="160" name="inst_38B4855C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>
