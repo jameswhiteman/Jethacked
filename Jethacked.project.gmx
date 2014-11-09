@@ -25,6 +25,10 @@
     <background>background\bkg_gradient</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\screen_shake.gml</script>
+    <script>scripts\screen_shake_start.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\player</object>
     <object>objects\par_block</object>

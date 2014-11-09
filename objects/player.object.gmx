@@ -29,6 +29,7 @@
 moveImpulse = 20
 jumpForce = 1600
 jumpImpulse = 100
+dashForce = 1000
 maxAirSpeed = 15
 maxGroundSpeed = 10
 juiceMax = 500
@@ -82,6 +83,7 @@ emitter1 = part_emitter_create(partSys);
             <string>left = keyboard_check(vk_left) || keyboard_check(ord('A'))
 right = keyboard_check(vk_right) || keyboard_check(ord('D'))
 jump = keyboard_check(vk_up) || keyboard_check(ord('W')) || keyboard_check(vk_space) || joystick_check_button(0, 3)
+explode = keyboard_check(ord('M'))
 dash = keyboard_check_pressed(ord('K'))
 shoot = keyboard_check_pressed(ord('J'))
 parry = keyboard_check_pressed(ord('L'))
@@ -143,7 +145,7 @@ if jump
 
 if dash
 {
-    //physics_apply_force(phy_com_x, phy_com_y, phy_linear_velocity_x * dashForce, phy_linear_velocity_y * dashForce);
+    physics_apply_impulse(phy_com_x, phy_com_y, dashForce * image_xscale, 0);
 }
 if shoot
 {
