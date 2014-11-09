@@ -25,11 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>forwardForce = 10
+            <string>forwardForce = 20
 breakTolerance = 150
 sprite_index = choose(spr_plane_1, spr_plane_2)
 
-tailLight = lsys_light_add(x - 41, y, 32, c_red)
+tailLight = lsys_light_add(x - 41 * image_xscale, y, 32, c_red)
 caster = lsys_caster_add(x, y)
 lsys_caster_add_point(caster, 100 - sprite_xoffset, 8 - sprite_yoffset)
 lsys_caster_add_point(caster, 116 - sprite_xoffset, 18 - sprite_yoffset)
@@ -61,9 +61,24 @@ lsys_caster_add_point(caster, 76 - sprite_xoffset, 5 - sprite_yoffset)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(x, y, explosion)
-lsys_light_delete(tailLight)
+            <string>lsys_light_delete(tailLight)
 lsys_caster_delete(caster)
+instance_create(x, y, explosion)
+
+var j;
+j = 0
+xx = random(room_width)
+yy = random(room_height)
+while !place_empty(xx, yy) || j = 1000
+{
+    xx = random(room_width)
+    yy = random(room_height)
+    j++
+}
+if j != 1000
+{
+    instance_create(xx, yy, choose(plane_1, plane_1_left))
+}
 </string>
           </argument>
         </arguments>
@@ -156,7 +171,7 @@ if sqrt(sqr(phy_linear_velocity_x) + sqr(phy_linear_velocity_y)) &gt; breakToler
   <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>2</PhysicsObjectShape>
-  <PhysicsObjectDensity>5</PhysicsObjectDensity>
+  <PhysicsObjectDensity>7</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
   <PhysicsObjectLinearDamping>0.100000001490116</PhysicsObjectLinearDamping>

@@ -9,7 +9,9 @@
     <sprite>sprites\spr_playerMask</sprite>
     <sprite>sprites\spr_blockMask</sprite>
     <sprite>sprites\spr_plane_1</sprite>
+    <sprite>sprites\spr_plane_1_left</sprite>
     <sprite>sprites\spr_plane_2</sprite>
+    <sprite>sprites\spr_plane_2_left</sprite>
     <sprite>sprites\spr_player_stand</sprite>
     <sprite>sprites\spr_player_jump</sprite>
     <sprite>sprites\spr_player_hurt</sprite>
@@ -22,6 +24,7 @@
     <sprite>sprites\spr_explosion_2</sprite>
     <sprite>sprites\spr_light_1</sprite>
     <sprite>sprites\spr_light_2</sprite>
+    <sprite>sprites\spr_enemy_1</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_gradient</background>
@@ -53,18 +56,17 @@
   </scripts>
   <objects name="objects">
     <object>objects\player</object>
+    <object>objects\enemy_1</object>
     <object>objects\par_block</object>
     <object>objects\control</object>
     <object>objects\block</object>
     <object>objects\plane_1</object>
-    <object>objects\player_tmp</object>
+    <object>objects\plane_1_left</object>
     <object>objects\blast</object>
     <object>objects\reflect</object>
-    <object>objects\plane_creator</object>
     <object>objects\asteroid</object>
     <object>objects\explosion</object>
   </objects>
-  <timelines name="timelines"/>
   <rooms name="rooms">
     <room>rooms\TestRoom</room>
     <room>rooms\room0</room>

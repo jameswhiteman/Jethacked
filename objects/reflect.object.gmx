@@ -91,7 +91,7 @@ y = parent.y;
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>-1</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>36,36</point>
-    <point>36,36</point>
+    <point>54,54</point>
+    <point>58,36</point>
   </PhysicsShapePoints>
 </object>

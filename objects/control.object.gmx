@@ -26,7 +26,33 @@
           <argument>
             <kind>1</kind>
             <string>global.grav = 40
-lsys_init(0.25)
+lsys_init(0.5)
+
+sprite_index = spr_blockMask
+var i;
+for (i = 0; i &lt; 15; i++)
+{
+    image_xscale = random_range(1, 5)
+    image_yscale = random_range(1, 5)
+    xx = random(room_width)
+    yy = random(room_height)
+    var j;
+    j = 0
+    while !place_empty(xx, yy) || j = 1000
+    {
+        xx = random(room_width)
+        yy = random(room_height)
+        j++
+    }
+    if j != 1000
+    {
+        var inst;
+       inst = instance_create(xx, yy, block)
+       inst.image_xscale = image_xscale
+       inst.image_yscale = image_yscale
+    }
+}
+sprite_index = -1
 </string>
           </argument>
         </arguments>
