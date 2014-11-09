@@ -26,6 +26,8 @@
     <sprite>sprites\spr_light_2</sprite>
     <sprite>sprites\spr_enemy_1</sprite>
     <sprite>sprites\spr_enemy_2</sprite>
+    <sprite>sprites\spr_effect_score_100</sprite>
+    <sprite>sprites\spr_effect_score_1000</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_gradient</background>
@@ -69,6 +71,8 @@
     <object>objects\asteroid</object>
     <object>objects\explosion</object>
     <object>objects\enemy_generator</object>
+    <object>objects\effect_score_100</object>
+    <object>objects\effect_score_1000</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\TestRoom</room>
