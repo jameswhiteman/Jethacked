@@ -55,14 +55,14 @@
     <instance objName="player" x="256" y="64" name="inst_559C0EC5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="plane_1" x="256" y="352" name="inst_E6ADF921" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="plane_1" x="512" y="160" name="inst_8C973FB3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="plane_1" x="672" y="384" name="inst_F2004A8C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="plane_1" x="1216" y="288" name="inst_6C189B4D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="plane_1" x="1472" y="576" name="inst_78F0AD09" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="944" y="1264" name="inst_438DCFE7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="1808" y="1168" name="inst_B0FC3449" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="416" y="768" name="inst_4B3A02DD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="plane_1" x="672" y="832" name="inst_47CD17AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="plane_1" x="160" y="992" name="inst_D800BA64" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="plane_1" x="1792" y="960" name="inst_BC10220A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="plane_1" x="1056" y="736" name="inst_CC515D62" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="plane_1" x="1760" y="160" name="inst_720069B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="464" y="336" name="inst_63317D7C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="352" y="1216" name="inst_82452AD3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="1456" y="368" name="inst_AB1C55F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemy_1" x="384" y="48" name="inst_68A888D1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="asteroid" x="688" y="208" name="inst_3E2D2B54" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="asteroid" x="864" y="144" name="inst_2C609D8A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -83,6 +83,41 @@
     <instance objName="block" x="16" y="720" name="inst_1A4CE467" locked="0" code="" scaleX="1.4375" scaleY="43.0322570800781" colour="4294967295" rotation="0"/>
     <instance objName="block" x="1024" y="16" name="inst_A5C5994A" locked="0" code="" scaleX="64.25" scaleY="1.5" colour="4294967295" rotation="0"/>
     <instance objName="block" x="2032" y="720" name="inst_FB9C0225" locked="0" code="" scaleX="1.28999996185303" scaleY="44.1290321350098" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="656" y="1168" name="inst_4E11DBCA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="1424" y="1216" name="inst_962AC801" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="1216" y="960" name="inst_5875D52E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="1728" y="704" name="inst_63CB5FDB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="plane_1_left" x="1696" y="208" name="inst_F41E7991" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="plane_1_left" x="1488" y="560" name="inst_EB09E0A9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="plane_1_left" x="1856" y="880" name="inst_F5C472FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="plane_1_left" x="976" y="624" name="inst_B6C3F63C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="plane_1_left" x="1616" y="1120" name="inst_601C50C4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="plane_1_left" x="1168" y="176" name="inst_A733E80A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="800" y="400" name="inst_9F9166DF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="1104" y="768" name="inst_B5F3F327" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="1344" y="656" name="inst_173DB94D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="1664" y="768" name="inst_5D26ECAB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="1072" y="304" name="inst_FD9624E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="512" y="432" name="inst_17EA59E9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="224" y="512" name="inst_E79CC6C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="208" y="848" name="inst_775F5265" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="144" y="1312" name="inst_F492AB4C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="1280" y="1136" name="inst_605715B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="1520" y="992" name="inst_858000ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="832" y="800" name="inst_0C19A869" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="752" y="640" name="inst_35BCE2F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="704" y="432" name="inst_1885BE30" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="1008" y="480" name="inst_28FD56BA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="1264" y="416" name="inst_2B2B2512" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="1456" y="752" name="inst_BBD7ECBE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="1008" y="1008" name="inst_04B963DC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="656" y="1040" name="inst_82C5D366" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="1648" y="432" name="inst_BEFD1961" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="1440" y="224" name="inst_F24CEDF5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="688" y="112" name="inst_09BF7488" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="1888" y="672" name="inst_9F576C42" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="1664" y="1248" name="inst_216E7176" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="asteroid" x="752" y="1264" name="inst_574C640C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>

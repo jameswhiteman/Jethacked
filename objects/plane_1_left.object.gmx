@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>forwardForce = -20
+            <string>forwardForce = -50
 breakTolerance = 150
 sprite_index = choose(spr_plane_1_left, spr_plane_2_left)
 

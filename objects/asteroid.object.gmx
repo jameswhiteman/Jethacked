@@ -27,8 +27,10 @@
             <kind>1</kind>
             <string>physics_apply_impulse(phy_com_x + random(5) * choose(1, -1) , phy_com_y + random(5) * choose(1, -1), random_range(10, 25), random_range(10, 25))
 caster = lsys_caster_add(x, y)
-for(i=0;i&lt;=2*pi; i+=2*pi/16)
-    lsys_caster_add_point(caster,  cos(i)*16, sin(i)*16);
+for(i=0;i&lt;=2*pi; i+=2*pi/8)
+    lsys_caster_add_point(caster,  cos(i)*17, sin(i)*17)
+    
+
 
 </string>
           </argument>
@@ -94,7 +96,7 @@ for(i=0;i&lt;=2*pi; i+=2*pi/16)
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>16,16</point>
-    <point>16,16</point>
+    <point>15,17</point>
+    <point>18,16</point>
   </PhysicsShapePoints>
 </object>

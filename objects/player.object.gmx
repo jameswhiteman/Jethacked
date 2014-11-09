@@ -109,10 +109,9 @@ emitter1 = part_emitter_create(partSys);
             <string>left = keyboard_check(vk_left) || keyboard_check(ord('A'))
 right = keyboard_check(vk_right) || keyboard_check(ord('D'))
 jump = keyboard_check(vk_up) || keyboard_check(ord('W')) || keyboard_check(vk_space) || joystick_check_button(0, 3)
-explode = keyboard_check(ord('M'))
-dash = keyboard_check_pressed(ord('K'))
-shoot = keyboard_check_pressed(ord('J'))
-parry = keyboard_check_pressed(ord('L'))
+dash = keyboard_check_pressed(ord('K')) || joystick_check_button(0, 7) || joystick_check_button(0, 1)
+shoot = keyboard_check_pressed(ord('J')) || joystick_check_button(0, 4)
+parry = keyboard_check_pressed(ord('L')) || joystick_check_button(0, 8) || joystick_check_button(0, 2)
 
 part_emitter_region(partSys,emitter1,x - 10 * image_xscale + 6,x - 10 * image_xscale + -6,y + 5 + 4,y + 5 + -4,ps_shape_ellipse,1);
 onGround = place_meeting(x, y + 3, par_block)
