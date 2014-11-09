@@ -20,6 +20,7 @@
     <sprite>sprites\spr_asteroid</sprite>
     <sprite>sprites\spr_explosion_1</sprite>
     <sprite>sprites\spr_explosion_2</sprite>
+    <sprite>sprites\spr_enemy_1</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_gradient</background>
@@ -31,6 +32,7 @@
   </scripts>
   <objects name="objects">
     <object>objects\player</object>
+    <object>objects\enemy_1</object>
     <object>objects\par_block</object>
     <object>objects\control</object>
     <object>objects\block</object>
@@ -42,7 +44,6 @@
     <object>objects\asteroid</object>
     <object>objects\explosion</object>
   </objects>
-  <timelines name="timelines"/>
   <rooms name="rooms">
     <room>rooms\TestRoom</room>
     <room>rooms\room0</room>
