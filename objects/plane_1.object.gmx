@@ -170,21 +170,29 @@ if sqrt(sqr(phy_linear_velocity_x) + sqr(phy_linear_velocity_y)) &gt; breakToler
     <event eventtype="7" enumb="0">
       <action>
         <libid>1</libid>
-        <id>112</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_wrap</functionname>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>4</kind>
-            <string>2</string>
+            <kind>1</kind>
+            <string>if (x &gt; room_width)
+phy_position_x = sprite_width / 2;
+else if (x &lt; 0)
+phy_position_x = room_width - (sprite_width / 2);
+else if (y &gt; room_height)
+phy_position_y = sprite_height / 2;
+else if (y &lt; 0)
+phy_position_y = room_height - (sprite_height / 2);
+</string>
           </argument>
         </arguments>
       </action>

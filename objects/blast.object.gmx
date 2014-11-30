@@ -26,11 +26,32 @@
           <argument>
             <kind>1</kind>
             <string>pushForce = player.phy_speed_x + 5000
+alarm[0] = 1
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
 
-physics_apply_impulse(phy_com_x, phy_com_y,
-    10000 * (mouse_x - phy_com_x),
-    10000 * (mouse_y - phy_com_y));
-phy_rotation = point_direction(mouse_x, mouse_y, phy_com_x, phy_com_y);
+physics_apply_impulse(phy_com_x, phy_com_y, 10000 * image_xscale,0);
 </string>
           </argument>
         </arguments>
